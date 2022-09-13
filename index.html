@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" 
+        https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header w-full bg-gray-200 h-36">
+    <form class="" id="search-form">
+        <div class="input-icons py-10 -mr-16 flex justify-center align-center">
+            <i class="fa fa-search align-start" aria-hidden="false"></i>
+            <input type="text" placeholder="Search for Photos..." 
+                class="border border-gray-200 w-3/4 h-10 rounded px-10 input-field" />
+        </div>
+    </form>
+
+    <div class="p-8 -mt-10 all-items" >
+    <div id="skel-container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="main-content">
+    <div id="photo-container" class="skeleton-text grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+        <div class="skeleton photo-container-column grid grid-cols-1 gap-4"></div>
+        <div class="skeleton photo-container-column grid grid-cols-1 gap-4"></div>
+        <div class="skeleton photo-container-column grid grid-cols-1 gap-4"></div>
+    </div>
+</div>
+    </div>
+</div>
+</body>
+</html>

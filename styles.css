@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.photo-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgb(255 255 255 / 75%);
+    backdrop-filter: blur(4px);
+    padding: 2rem;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.photo-modal.showing {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.photo-modal .photo-modal-content {
+    border-radius: 12px;
+    overflow: hidden;
+    width: 600px;
+    max-width: 100%;
+    transform: translateY(5%);
+    transition: transform 0.2s ease-in-out;
+}
+
+.photo-modal.showing .photo-modal-content {
+    transform: translateY(0%);
+}
+
+
+.input-icons i {
+    position: absolute;
+}
+  
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+  
+.fa-search {
+    padding: 10px;
+    min-width: 40px;
+}
+  
+.input-field {
+    padding: 20px 20px 20px 40px;
+    text-align: left;
+}
+
+.all-items {
+    display: grid;
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+    margin-top: -30px;
+}
+
+
+#skel-container {
+  display: none;
+}
+
+#skel-container.showing {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+#skel-container > div {
+  min-height: 300px;
+  background: linear-gradient(90deg, #eee, #f9f9f9);
+  border-radius: 8px;
+  animation-name: animate-skel-el;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+#skel-container.showing + #main-content{
+  display: none;
+}
+
+
+
+@keyframes animate-skel-el {
+  0% {
+      opacity: 0.2;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0.2;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  #skel-container.showing {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;  
+}
+}
+
+
+
+/*
+.skeleton-text {
+  width: 100%;
+  height: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.skeleton {
+  position: relative;
+  }
+
+  .skeleton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(90deg, #eee, #f9f9f9);
+    background-size: 200%;
+    animation: .skeleton 1s reverse;
+  }
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-positon: -100% 0;
+    }
+    100% {
+      background-positon: 100% 0;
+    }
+  }
+  
+  
